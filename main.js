@@ -1,4 +1,42 @@
 
+              var songs = [{
+        'name': 'Badri Ki Dulhania (Title Track)',
+        'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
+        'album': 'Badrinath ki Dulhania',
+        'duration': '2:56',
+       'fileName': 'song1.mp3',
+       'image': 'song1.jpg'
+    },
+    {
+        'name': 'Humma Song',
+        'artist': 'Badshah, Jubin Nautiyal, Shashaa Tirupati',
+        'album': 'Ok Jaanu',
+        'duration': '3:15',
+        'fileName': 'song2.mp3',
+        'image': 'song2.jpg'
+
+    },
+    {
+        'name': 'Nashe Si Chadh Gayi',
+        'artist': 'Arijit Singh',
+        'album': 'Befikre',
+        'duration': '2:34',
+        'fileName': 'song3.mp3',
+        'image': 'song3.jpg'
+
+    },
+    {
+        'name': 'The Breakup Song',
+        'artist': 'Nakash Aziz, Arijit Singh, Badshah, Jonita Gandhi',
+        'album': 'Ae Dil Hai Mushkil',
+        'duration': '2:29',
+        'fileName': 'song4.mp3',
+        'image': 'song1.jpg'
+
+    }]
+
+
+  var songName = 1;
 
 function fancyTimeFormat(time)
 {
@@ -19,6 +57,11 @@ function fancyTimeFormat(time)
           return ret;
 }
 
+function changeCurrentSongDetails(songObj) {
+    $('.current-song-image').attr('src','img/' + songObj.image)
+    $('.current-song-name').text(songObj.name)
+    $('.current-song-album').text(songObj.album)
+}
 
 function toggleSong(){
     var song = document.querySelector('audio');
@@ -48,23 +91,23 @@ function UpdateCurrentTime(){
 
 
 //fux used for diff songs no need to write the same code to pay diff song // we can easily can that fux"
-      function addSongNameClickEvent(songName,position) {
+      function addSongNameClickEvent(songObj,position) {
+        var songName = songObj.fileName;
         var id = '#song' + position;
                  $(id).click(function() {
                  var audio = document.querySelector('audio');
                  var currentSong = audio.src;
-                         if(currentSong.search(songName) != -1)
+                         if(songName != position)
                            {
+                             audio.src = songName;
+                             songName = position;
+                             changeCurrentSongDetails(songObj); // fux" call
+                          }
                            toggleSong();
-                           }
-                         else {
-                           audio.src = songName;
-                           toggleSong();
-                           }
                  });
  }
 
-
+//when my html document file complitly loaded then only , this fux" will run // because we need html in this fux"
 window.onload = function(){
             UpdateCurrentTime();
             setInterval(function(){
@@ -79,35 +122,6 @@ window.onload = function(){
           //    var albumList = ['Badrinath ki Dulhania','Ok Jaanu','Befikre','Ae Dil Hai Mushkil'];
           //    var durationList = ['2:56','3:15','2:34','2:29'];
 
-
-              var songs = [{
-        'name': 'Badri Ki Dulhania (Title Track)',
-        'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
-        'album': 'Badrinath ki Dulhania',
-        'duration': '2:56',
-       'fileName': 'song1.mp3'
-    },
-    {
-        'name': 'Humma Song',
-        'artist': 'Badshah, Jubin Nautiyal, Shashaa Tirupati',
-        'album': 'Ok Jaanu',
-        'duration': '3:15',
-        'fileName': 'song2.mp3'
-    },
-    {
-        'name': 'Nashe Si Chadh Gayi',
-        'artist': 'Arijit Singh',
-        'album': 'Befikre',
-        'duration': '2:34',
-        'fileName': 'song3.mp3'
-    },
-    {
-        'name': 'The Breakup Song',
-        'artist': 'Nakash Aziz, Arijit Singh, Badshah, Jonita Gandhi',
-        'album': 'Ae Dil Hai Mushkil',
-        'duration': '2:29',
-        'fileName': 'song4.mp3'
-    }]
 
 
                       //$('#song1 .song-name').text(songList[0]);
@@ -126,7 +140,7 @@ window.onload = function(){
                                song.find('.song-artist').text(obj.artist);
                                song.find('.song-album').text(obj.album);
                                song.find('.song-length').text(obj.duration);
-                               addSongNameClickEvent(obj.fileName,i+1);
+                               addSongNameClickEvent(obj,i+1);
                            }
 
                 //var fileNames = ['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];//all songs src
