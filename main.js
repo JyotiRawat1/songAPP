@@ -1,4 +1,6 @@
-
+var currentSongNumber = 1;
+var willLoop = 0;
+var willShuffle = 0;
               var songs = [{
         'name': 'Badri Ki Dulhania (Title Track)',
         'artist': 'Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi',
@@ -31,7 +33,7 @@
         'album': 'Ae Dil Hai Mushkil',
         'duration': '2:29',
         'fileName': 'song4.mp3',
-        'image': 'song1.jpg'
+        'image': 'song4.jpg'
 
     }]
 
@@ -88,6 +90,42 @@ function UpdateCurrentTime(){
         $('.time-elapsed').text(currentTime);
         $('.song-duration').text(duration);
       }
+      $('.fa-repeat').on('click',function(){
+      $('.fa-repeat').toggleClass('disabled')
+      willLoop = 1-willLoop;
+    });
+
+      $('.fa-random').on('click',function(){
+      $('.fa-random').toggleClass('disabled')
+      willShuffle = 1-willShaffle;
+    });
+
+    function timejump(){
+      var song =  document.querySelector('audio')
+      song.currentTime = song.duration - 5;
+}
+
+      $('audio').on('ended',function(){
+            var audio = document.querySelector('audio');
+              if(currentSongNumber < 4){
+              //play the next song
+              var nextSongObj = songs[currentSongNumber]; //(song[1]=song2)
+              //currentSongNumber = 1(we knw that so humne eska faeda uthaya)
+            //  songs[0]= 1song
+            //  songs[1]= 2song
+
+              audio.scr = nextSongObj.fileName;
+              toggleSong();
+              changeCurrentSongDetails(nextSongObj);
+              currentSongNumber = currentSongNumber +1;
+
+              }
+              else{
+              //stop playing
+              $('.play-icon').removeClass('fa-pause').addClass('fa-play');
+              audio.currentTime = 0;
+              }
+      })
 
 
 //fux used for diff songs no need to write the same code to pay diff song // we can easily can that fux"
@@ -97,22 +135,29 @@ function UpdateCurrentTime(){
                  $(id).click(function() {
                  var audio = document.querySelector('audio');
                  var currentSong = audio.src;
-                         if(songName != position)
+                         if(songName !== position)
                            {
+
                              audio.src = songName;
-                             songName = position;
+
+                             songNumber = position;
                              changeCurrentSongDetails(songObj); // fux" call
                           }
                            toggleSong();
+
                  });
  }
 
 //when my html document file complitly loaded then only , this fux" will run // because we need html in this fux"
 window.onload = function(){
+        changeCurrentSongDetails(songs[0]); // fux" call
+
             UpdateCurrentTime();
             setInterval(function(){
               UpdateCurrentTime();
             },1000);
+
+
             //  var songName1 = 'Tamma Tamma Again';
               //var songName2 = 'Humma Song';
             //  var songName3 = 'Nashe se chad gyi';
@@ -141,7 +186,8 @@ window.onload = function(){
                                song.find('.song-album').text(obj.album);
                                song.find('.song-length').text(obj.duration);
                                addSongNameClickEvent(obj,i+1);
-                           }
+                           }       $('#songs').DataTable({paging: false});
+
 
                 //var fileNames = ['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];//all songs src
 
@@ -181,7 +227,8 @@ window.onload = function(){
            toggleSong();
   });
       $('body').on('keypress', function(event) {
-                  if (event.keyCode == 32) {
+        var target = event.target;
+                  if (event.keyCode == 32 && target.tagName !='INPUT') {
                      //call kro function ko taki useke wala code run ho
                      toggleSong();
             }
