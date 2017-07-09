@@ -6,17 +6,12 @@
 	margin: auto;
 }
 
- .key .label {
-    position: absolute;
-		padding-top: 60px;
-    padding-right: 0px;
-    padding-bottom: auto;
-    padding-left: 0px;
-		text-align: center;
+.key .label{
+	position: absolute;
+	bottom: 5px;
+	text-align: center;
 
 }
-
-
 
 
 .key {
@@ -25,14 +20,19 @@
 	width: 50px;
 	margin: -1px;
 	border-style: none solid solid solid;
-	border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 7px 7px;
 	border-color: black;
 	border-width: 1px;
 	background-color: white;
-	display: inline-block;
   cursor: pointer;
   box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+	position: absolute;
+	font-size: 12px;
+	text-align: center;
+
 }
+
+
 .black {
     background-color: rgb(32,32,32);
     color: #ffffff;
@@ -40,6 +40,12 @@
     text-shadow: 0px -1px 1px rgba(255,255,255,0.5);
 		margin-bottom: 60px;
 		height: 120px;
+}
+#keyboard {
+	height: 180px;
+	margin: auto;
+	background-color: red;
+	position: relative;
 }
 
 .keyboard-holder {
