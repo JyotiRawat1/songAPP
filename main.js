@@ -126,6 +126,10 @@ function UpdateCurrentTime(){
               audio.currentTime = 0;
               }
       })
+//volume
+
+
+
 
 
 //fux used for diff songs no need to write the same code to pay diff song // we can easily can that fux"
