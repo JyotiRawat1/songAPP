@@ -10,15 +10,16 @@
 <body>
 <div class="keyboad-options">
   "Sound"
-  <select id="sound">
-    <option value="0" selected>Keyboard</option>
-    <option value="1" selected>Organ</option>
-    <option value="2" selected>Acoustic Guitar</option>
-    <option value="3" selected>EDM, bro!</option>
-</select>
+  <div id="instrument">
+  <h3 id="piano">PIANO</h3>
+  <h3 id="organ">ORGAN</h3>
+  <h3 id="guitar">GUITAR</h3>
+  <h3 id="edm">EDM</h3>
+</div>
+
 
 <div id="keyboard" class="key-holder" style="width: 840px;">
-  <div class="white key" id="KEY_C,-1" style="width: 40px; height: 200px; left: 0px;">
+  <div class="white key" id="KEY_C" style="width: 40px; height: 200px; left: 0px;">
     <div class="label">
       <h4>Q</h4>
       <br>
@@ -27,7 +28,7 @@
       <span name="OCTAVE_LABEL" value="-1">3</span>
     </div>
   </div>
-<div class='black key' id="KEY_C#,-1" style="width: 30px; hight: 120px; left: 25px;">
+<div class='black key' id="KEY_Cb" style="width: 30px; hight: 120px; left: 25px;">
   <div class="label">
     <h4>2</h4>
      <br>
@@ -40,7 +41,7 @@
 
 
 
-   <div class="white key" id="KEY_D,-1" style="width: 40px; height: 200px; left: 40px;">
+   <div class="white key" id="KEY_D" style="width: 40px; height: 200px; left: 40px;">
      <div class="label">
        <h4>W</h4>
        <br>
@@ -49,7 +50,7 @@
        <span name="OCTAVE_LABEL" value="-1">3</span>
      </div>
    </div>
- <div class='black key' id="KEY_D#,-1" style="width: 30px; hight: 120px; left: 65px;">
+ <div class='black key' id="KEY_Db" style="width: 30px; hight: 120px; left: 65px;">
    <div class="label">
      <h4>3</h4>
       <br>
@@ -60,7 +61,7 @@
     </div>
   </div>
 
-    <div class="white key" id="KEY_E,-1" style="width: 40px; height: 200px; left: 80px;">
+    <div class="white key" id="KEY_E" style="width: 40px; height: 200px; left: 80px;">
       <div class="label">
         <h4>E</h4>
         <br>
@@ -69,7 +70,7 @@
         <span name="OCTAVE_LABEL" value="-1">3</span>
       </div>
     </div>
-      <div class="white key" id="KEY_R,-1" style="width: 40px; height: 200px; left: 120px;">
+      <div class="white key" id="KEY_R" style="width: 40px; height: 200px; left: 120px;">
         <div class="label">
           <h4>R</h4>
           <br>
@@ -81,7 +82,7 @@
 
 
 
-      <div class='black key' id="KEY_F#,-1" style="width: 30px; hight: 120px; left: 145px;">
+      <div class='black key' id="KEY_Fb" style="width: 30px; hight: 120px; left: 145px;">
       <div class="label">
         <h4>5</h4>
          <br>
@@ -91,7 +92,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_G,-1" style="width: 40px; height: 200px; left: 160px;">
+      <div class="white key" id="KEY_G" style="width: 40px; height: 200px; left: 160px;">
         <div class="label">
           <h4>T</h4>
           <br>
@@ -102,7 +103,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_G#,-1" style="width: 30px; hight: 120px; left: 185px;">
+      <div class='black key' id="KEY_Gb" style="width: 30px; hight: 120px; left: 185px;">
       <div class="label">
         <h4>6</h4>
          <br>
@@ -112,7 +113,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 200px;">
+      <div class="white key" id="KEY_A" style="width: 40px; height: 200px; left: 200px;">
         <div class="label">
           <h4>Y</h4>
           <br>
@@ -123,7 +124,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_A#,-1" style="width: 30px; hight: 120px; left: 225px;">
+      <div class='black key' id="KEY_Ab" style="width: 30px; hight: 120px; left: 225px;">
       <div class="label">
         <h4>7</h4>
          <br>
@@ -133,7 +134,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 240px;">
+      <div class="white key" id="KEY_B" style="width: 40px; height: 200px; left: 240px;">
         <div class="label">
           <h4>U</h4>
           <br>
@@ -142,7 +143,7 @@
           <span name="OCTAVE_LABEL" value="-1">3</span>
         </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 280px;">
+      <div class="white key" id="KEY_C1" style="width: 40px; height: 200px; left: 280px;">
         <div class="label">
           <h4>I</h4>
           <br>
@@ -153,7 +154,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_C#,-1" style="width: 30px; hight: 120px; left: 305px;">
+      <div class='black key' id="KEY_C1b" style="width: 30px; hight: 120px; left: 305px;">
       <div class="label">
         <h4>9</h4>
          <br>
@@ -163,9 +164,9 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 320px;">
+      <div class="white key" id="KEY_D1" style="width: 40px; height: 200px; left: 320px;">
         <div class="label">
-          <h4>O</h4>
+          <h4>0</h4>
           <br>
           <br>
           D
@@ -173,7 +174,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_D#,-1" style="width: 30px; hight: 120px; left: 345px;">
+      <div class='black key' id="KEY_D1b" style="width: 30px; hight: 120px; left: 345px;">
       <div class="label">
         <h4>0</h4>
          <br>
@@ -183,7 +184,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 360px;">
+      <div class="white key" id="KEY_E1" style="width: 40px; height: 200px; left: 360px;">
         <div class="label">
           <h4>P</h4>
           <br>
@@ -192,7 +193,7 @@
           <span name="OCTAVE_LABEL" value="-1">4</span>
         </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 400px;">
+      <div class="white key" id="KEY_F1" style="width: 40px; height: 200px; left: 400px;">
         <div class="label">
           <h4>[</h4>
           <br>
@@ -203,7 +204,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_F#,-1" style="width: 30px; hight: 120px; left: 425px;">
+      <div class='black key' id="KEY_F1b" style="width: 30px; hight: 120px; left: 425px;">
       <div class="label">
         <h4>=</h4>
          <br>
@@ -213,7 +214,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_G,-1" style="width: 40px; height: 200px; left: 440px;">
+      <div class="white key" id="KEY_G1" style="width: 40px; height: 200px; left: 440px;">
         <div class="label">
           <h4>]</h4>
           <br>
@@ -223,7 +224,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_G#,-1" style="width: 30px; hight: 120px; left: 465px;">
+      <div class='black key' id="KEY_G1b" style="width: 30px; hight: 120px; left: 465px;">
       <div class="label">
         <h4>A</h4>
          <br>
@@ -233,7 +234,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 480px;">
+      <div class="white key" id="KEY_A1" style="width: 40px; height: 200px; left: 480px;">
         <div class="label">
           <h4>Z</h4>
           <br>
@@ -244,7 +245,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_A#,-1" style="width: 30px; hight: 120px; left: 505px;">
+      <div class='black key' id="KEY_A1b" style="width: 30px; hight: 120px; left: 505px;">
       <div class="label">
         <h4>S</h4>
          <br>
@@ -254,7 +255,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_B,-1" style="width: 40px; height: 200px; left: 520px;">
+      <div class="white key" id="KEY_B2" style="width: 40px; height: 200px; left: 520px;">
         <div class="label">
           <h4>X</h4>
           <br>
@@ -263,7 +264,7 @@
           <span name="OCTAVE_LABEL" value="-1">4</span>
         </div>
       </div>
-      <div class="white key" id="KEY_C,-1" style="width: 40px; height: 200px; left: 560px;">
+      <div class="white key" id="KEY_C2" style="width: 40px; height: 200px; left: 560px;">
         <div class="label">
           <h4>C</h4>
           <br>
@@ -273,7 +274,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_C#,-1" style="width: 30px; hight: 120px; left: 585px;">
+      <div class='black key' id="KEY_C2b" style="width: 30px; hight: 120px; left: 585px;">
       <div class="label">
         <h4>F</h4>
          <br>
@@ -283,7 +284,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_D,-1" style="width: 40px; height: 200px; left: 600px;">
+      <div class="white key" id="KEY_D2" style="width: 40px; height: 200px; left: 600px;">
         <div class="label">
           <h4>V</h4>
           <br>
@@ -293,7 +294,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_G#,-1" style="width: 30px; hight: 120px; left: 625px;">
+      <div class='black key' id="KEY_D3b" style="width: 30px; hight: 120px; left: 625px;">
       <div class="label">
         <h4>G</h4>
          <br>
@@ -303,7 +304,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_E,-1" style="width: 40px; height: 200px; left: 640px;">
+      <div class="white key" id="KEY_E3" style="width: 40px; height: 200px; left: 640px;">
         <div class="label">
           <h4>B</h4>
           <br>
@@ -312,7 +313,7 @@
           <span name="OCTAVE_LABEL" value="-1">5</span>
         </div>
       </div>
-      <div class="white key" id="KEY_F,-1" style="width: 40px; height: 200px; left: 680px;">
+      <div class="white key" id="KEY_F3" style="width: 40px; height: 200px; left: 680px;">
         <div class="label">
           <h4>N</h4>
           <br>
@@ -322,7 +323,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_F#,-1" style="width: 30px; hight: 120px; left: 705px;">
+      <div class='black key' id="KEY_F3b" style="width: 30px; hight: 120px; left: 705px;">
       <div class="label">
         <h4>J</h4>
          <br>
@@ -332,7 +333,7 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_G,-1" style="width: 40px; height: 200px; left: 720px;">
+      <div class="white key" id="KEY_G3" style="width: 40px; height: 200px; left: 720px;">
         <div class="label">
           <h4>M</h4>
           <br>
@@ -343,7 +344,7 @@
       </div>
 
 
-      <div class='black key' id="KEY_A#,-1" style="width: 30px; hight: 120px; left: 745px;">
+      <div class='black key' id="KEY_G3b" style="width: 30px; hight: 120px; left: 745px;">
       <div class="label">
         <h4>K</h4>
          <br>
@@ -353,9 +354,9 @@
          #
        </div>
       </div>
-      <div class="white key" id="KEY_A,-1" style="width: 40px; height: 200px; left: 760px;">
+      <div class="white key" id="KEY_A4" style="width: 40px; height: 200px; left: 760px;">
         <div class="label">
-          <h4>L</h4>
+          <h4>,</h4>
           <br>
           <br>
           A
@@ -363,7 +364,7 @@
         </div>
       </div>
 
-      <div class='black key' id="KEY_A#,-1" style="width: 30px; hight: 120px; left: 785px;">
+      <div class='black key' id="KEY_A5b" style="width: 30px; hight: 120px; left: 785px;">
       <div class="label">
         <h4>L</h4>
          <br>
@@ -374,7 +375,7 @@
        </div>
       </div>
 
-      <div class="white key" id="KEY_B,-1" style="width: 40px; height: 200px; left: 800px;">
+      <div class="white key" id="KEY_B4" style="width: 40px; height: 200px; left: 800px;">
         <div class="label">
           <h4>.</h4>
           <br>
@@ -383,6 +384,8 @@
           <span name="OCTAVE_LABEL" value="-1">5</span>
         </div>
       </div>
+
+
 
 
 </div>
