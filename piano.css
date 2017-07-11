@@ -1,4 +1,71 @@
+#instrument
+{
+	height: 50%;
+	border-style: solid solid solid solid;
+  width: 80px;
+	font-family: Helvetica;
+	border-color: blue;
+	
+}
+#organ
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: pink;
+	background-color: pink;
 
+}
+
+#select{
+border: solid black;
+background-color: white;
+border: 1px;
+}
+
+#piano
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: pink;
+	background-color: pink;
+
+}
+
+#guitar
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: pink;
+	background-color: pink;
+
+}
+
+#edm
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: pink;
+	background-color: pink;
+
+}
+
+#edm:hover {
+    background-color: white;
+}
+
+
+#guitar:hover {
+    background-color: white;
+}
+
+
+#piano:hover {
+    background-color: white;
+}
+
+#organ:hover {
+    background-color: white;
+}
 
 
 #keyboard {
