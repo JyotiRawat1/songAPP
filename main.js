@@ -91,7 +91,7 @@ function UpdateCurrentTime(){
         duration = fancyTimeFormat(duration);
         $('.time-elapsed').text(currentTime);
         $('.song-duration').text(duration);
-        var time=song.currentTime/song.duration*100;
+        var time=song.currentTime/song.duration*100;  // progress bar code only 2 times
         $('.progress-filled').css("width",time+"%");
       }
       $('.fa-repeat').on('click',function(){
@@ -226,6 +226,8 @@ window.onload = function(){
                   $('.main').removeClass('hidden');
               } else {
                   $('#name-input').addClass('error');
+                  $('.message').removeClass('hidden');
+                
               }
           });
 

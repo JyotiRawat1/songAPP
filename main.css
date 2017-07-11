@@ -82,6 +82,10 @@ h1 {
 
 .error {
     border: 2px solid red;
+
+}
+.message{
+  color: red;
 }
 
 .progress-wrapper {
