@@ -37,27 +37,6 @@ var willShuffle = 0;
 
     }]
 
-    function updateTimer()
-    {
-    var song = document.querySelector('audio');
-    var ct = song.currentTime;
-    var td = song.duration;
-    var percentage = (ct/td)*100;
-
-    $(".progress-filled").css('width',percentage+"%");
-    }
-    $(".player-progress")on.click(function(event){
-    var $this = $(this);
-
-    var widthclicked = event.pageX - $this.offset().left;
-    var totalwidth = $this.width();
-    var calc = (widthclicked /totalwidth) * 100;
-    var song = document.querySelector('audio');
-    song.currentTime = (song.duration*calc)/100;
-    updateTimer();
-    })
-
-
   var songName = 1;
 
 function fancyTimeFormat(time)
