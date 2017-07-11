@@ -36,7 +36,7 @@ var willShuffle = 0;
         'image': 'song4.jpg'
 
     }]
-    
+
 
 
 
@@ -92,7 +92,7 @@ function UpdateCurrentTime(){
         $('.time-elapsed').text(currentTime);
         $('.song-duration').text(duration);
         var time=song.currentTime/song.duration*100;
-        $('.progress.filled').css("width",time+"%");
+        $('.progress-filled').css("width",time+"%");
       }
       $('.fa-repeat').on('click',function(){
       $('.fa-repeat').toggleClass('disabled')
