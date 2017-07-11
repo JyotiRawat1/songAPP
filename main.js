@@ -143,6 +143,7 @@ function UpdateCurrentTime(){
                  $(id).click(function() {
                  var audio = document.querySelector('audio');
                  var currentSong = audio.src;
+
                          if(songName !== position)
                            {
 
@@ -219,15 +220,19 @@ window.onload = function(){
           //show name wala code
           $('.welcome-screen button').on('click', function() {
               var name = $('#name-input').val();
-              if (name.length > 2) {
+              var pwd = $('#pwd-input').val();
+              if (name>=2 && pwd>=6) {
                   var message = "Welcome, " + name;
                   $('.main .user-name').text(message);
                   $('.welcome-screen').addClass('hidden');
                   $('.main').removeClass('hidden');
               } else {
                   $('#name-input').addClass('error');
+                  $('#name-pwd').addClass('error');
+
                   $('.message').removeClass('hidden');
-                
+                  $('.messages').removeClass('hidden');
+
               }
           });
 
